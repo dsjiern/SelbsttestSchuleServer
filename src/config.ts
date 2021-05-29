@@ -1,4 +1,4 @@
-import { DBuser, DBpwd, DBhost, DBport, DBsource, DBdb, MAILhost, MAILport, MAILsecure, MAILuser, MAILpwd, SERVERport, SERVERlisten, SERVERhost, ADMINmail } from './.env';
+import { DBuser, DBpwd, DBhost, DBport, DBsource, DBdb, MAILhost, MAILport, MAILsecure, MAILuser, MAILpwd, SERVERport, SERVERlisten, SERVERhost, ADMINmail } from './env';
 
 export const DBDATA = {
   user: DBuser,
