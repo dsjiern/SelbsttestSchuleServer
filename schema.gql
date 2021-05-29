@@ -1,0 +1,52 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Schule {
+  _id: UUID!
+  name: String!
+  dienststelle: String!
+  ansprechperson: String
+  email: EmailAddress
+  telefon: String
+  daten: String
+}
+
+"""UUID"""
+scalar UUID
+
+"""
+A field whose value conforms to the standard internet email address format as specified in RFC822: https://www.w3.org/Protocols/rfc822/.
+"""
+scalar EmailAddress
+
+type Test {
+  _id: UUID!
+  name: String!
+  zeitpunkt: DateTime!
+  _schule: UUID!
+  schule: Schule
+}
+
+"""A datetime string YYYY-MM-DD HH:MM:SS"""
+scalar DateTime
+
+type Query {
+  Schule(id: UUID!): Schule!
+  Liste: [Schule!]!
+  Daten(passwort: String!, dienststelle: String!): Schule!
+  Test(id: UUID!): Test
+}
+
+type Mutation {
+  Register(telefon: String!, email: EmailAddress!, ansprechperson: String!, passwort: String!, dienststelle: String!, name: String!): Schule
+  SetDaten(daten: String!, passwort: String!, dienststelle: String!): Schule!
+  DelSchule(passwort: String!, dienststelle: String!): Boolean!
+  SendTests(hersteller: String, daten: [ITest!]!, zeitpunkt: DateTime!, passwort: String!, dienststelle: String!): Int!
+}
+
+input ITest {
+  name: String!
+  email: EmailAddress!
+  geburtsdatum: String
+}
