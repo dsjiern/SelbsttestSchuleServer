@@ -6,7 +6,7 @@ export const template = `
                 margin: 0px;
                 padding: 0px;
                 font-family: Arial, sans-serif;
-                font-size: 85%;
+                font-size: 80%;
             }
             
             body {
@@ -40,8 +40,8 @@ export const template = `
             }
             
             img {
-                width: 5cm;
-                height: 5cm;
+                width: 4cm;
+                height: 4cm;
                 display: block;
                 margin: auto;
             }
@@ -50,6 +50,12 @@ export const template = `
                 font-size: 85%;
                 font-style: italic;
                 text-align: center;
+            }
+            
+            p.footer {
+                font-size: 85%;
+                margin-top: 1em;
+                font-style: italic;
             }
         </style>
     </head>
@@ -68,6 +74,10 @@ export const template = `
         <p><img src="{{qr}}" />{{url}}</p>
         <p><b>Bitte beachten!</b> Ein negatives Testergebnis stellt nur eine Momentaufnahme dar und entbindet nicht von Hygiene- und Schutzmaßnahmen. Ein Schnelltest reduziert jedoch das Risiko, andere unwissentlich anzustecken.</p>
         <p><u>Ein negatives Ergebnis im Antigen-Schnelltest schließt eine Infektion nicht aus!</u></p>
+        <p class="footer">
+          Diese Bescheinigung wurde elektronisch erstellt und ist ohne Unterschrift gültig. Zur Verifikation kann innerhalb von 60 Stunden der angegebene QR-Code gescannt werden.
+          Die Verantwortung für die ausgeführten Tests und die ausgestellten Bescheinigungen liegt bei oben angegebener Schule.
+        </p>
         <footer>www.selbsttest-schule.de</footer>
     </body>
 </html>
