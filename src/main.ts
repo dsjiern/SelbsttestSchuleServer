@@ -32,7 +32,7 @@ process.on('uncaughtException', (error) => {
 });
 
 const cleanjob = new CronJob('0 0 * * * *', () => {
-  const clearbefore = moment().subtract(1,'day').format('YYYY-MM-DD HH:mm:ss');
+  const clearbefore = moment().subtract(60,'hours').format('YYYY-MM-DD HH:mm:ss');
   db.collection('test').deleteMany({ zeitpunkt: { $lt: clearbefore } })
 }, null, true, 'Europe/Berlin');
 cleanjob.start();
